@@ -12,7 +12,7 @@ using Northwind.Data;
 namespace NorthwindApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230227094413_InitDB")]
+    [Migration("20230227164604_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
@@ -34,7 +34,7 @@ namespace NorthwindApp.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("City")
@@ -50,7 +50,7 @@ namespace NorthwindApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("HireDate")
+                    b.Property<DateTime?>("HireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("HomePhone")
@@ -75,7 +75,7 @@ namespace NorthwindApp.Data.Migrations
                     b.Property<string>("Region")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ReportsTo")
+                    b.Property<int?>("ReportsTo")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")

@@ -20,8 +20,8 @@ namespace NorthwindApp.Data.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TitleOfCourtesy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    HireDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    HireDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Region = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -31,7 +31,7 @@ namespace NorthwindApp.Data.Migrations
                     Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Photo = table.Column<byte[]>(type: "image", nullable: true),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ReportsTo = table.Column<int>(type: "int", nullable: false),
+                    ReportsTo = table.Column<int>(type: "int", nullable: true),
                     PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

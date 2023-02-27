@@ -1,16 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Northwind.Data.Entities
+namespace NorthwindApp.API.Models
 {
-    [Table("Employees")]
-    public class EmployeeEntity : BaseEntity
+    public class CreateEmloyeeRequest
     {
         public string LastName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
         public string? Title { get; set; }
         public string? TitleOfCourtesy { get; set; }
-        public DateTime? BirthDate { get; set; }
-        public DateTime? HireDate { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime HireDate { get; set; }
         public string? Address { get; set; }
         public string? City { get; set; }
         public string? Region { get; set; }
@@ -24,7 +24,7 @@ namespace Northwind.Data.Entities
 
         public string? Notes { get; set; }
 
-        public int? ReportsTo { get; set; }
+        public int ReportsTo { get; set; }
         public string? PhotoPath { get; set; }
     }
 }
