@@ -11,8 +11,10 @@ namespace NorthwindApp.API.Controllers
     {
         private readonly IEmployeeService _employeeService;
         private readonly IMapper _mapper;
-        public EmployeeController(IEmployeeService employeeService, IMapper mapper)
+        private readonly ILogger<EmployeeController> _logger;
+        public EmployeeController(ILogger<EmployeeController> logger, IEmployeeService employeeService, IMapper mapper)
         {
+            _logger = logger;
             _employeeService = employeeService;
             _mapper = mapper;
         }
