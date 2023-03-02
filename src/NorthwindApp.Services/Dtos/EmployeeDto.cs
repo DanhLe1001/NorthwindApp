@@ -1,6 +1,6 @@
-﻿namespace NorthwindApp.API.Models
+﻿namespace NorthwindApp.Services.Dtos
 {
-    public class CreateEmloyeeRequest
+    public class EmployeeDto : BaseDto
     {
         public string LastName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;

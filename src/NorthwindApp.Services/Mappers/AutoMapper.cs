@@ -8,8 +8,7 @@ namespace NorthwindApp.Services.Mappers
     {
         public AutoMapper()
         {
-            //mapper from service to data (mapper )
-            CreateMap<EmployeesDto, EmployeeEntity>()
+            CreateMap<EmployeeDto, EmployeeEntity>()
                 .ReverseMap();
 
         }

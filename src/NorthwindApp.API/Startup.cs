@@ -21,14 +21,14 @@ namespace NorthwindApp.API
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Northwind")));
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient(typeof(IEmployeeRepository), typeof(EmployeeRepository));
             services.AddTransient(typeof(IEmployeeService), typeof(EmployeeService));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddControllers();//.AddFluentValidation();
+            services.AddControllers();
             services.AddTransient<IValidator<CreateEmloyeeRequest>, CreateEmployeeRequestValidator>();
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

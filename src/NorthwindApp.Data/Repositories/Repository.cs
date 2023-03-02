@@ -16,9 +16,32 @@ namespace NorthwindApp.Data.Repositories
             _dbSet = _context.Set<T>();
         }
 
+        public void Delete(Guid entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public IQueryable<T> GetAll()
         {
-            return _context.Set<T>().AsNoTracking().AsQueryable();
+            var query = _context.Set<T>().AsNoTracking().AsQueryable();
+            return query;
+        }
+
+        public T GetById(Guid id)
+        {
+            return _context.Set<T>().AsNoTracking().Single(x => x.Id == id);
+        }
+
+        public T Insert(T entity)
+        {
+            _context.Set<T>().Add(entity);
+            _context.SaveChanges();
+            return entity;
+        }
+
+        public T Update(T entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

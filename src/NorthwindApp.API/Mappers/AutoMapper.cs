@@ -8,7 +8,7 @@ namespace NorthwindApp.API.Mappers
     {
         public AutoMapper()
         {
-            CreateMap<CreateEmloyeeRequest, EmployeesDto>();
+            CreateMap<CreateEmloyeeRequest, EmployeeDto>();
         }
     }
 }

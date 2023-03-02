@@ -12,31 +12,23 @@ namespace Northwind.Data.Entities
         public string FirstName { get; set; } = string.Empty;
         [MaxLength(255)]
         public string? Title { get; set; }
-        [MaxLength(255)]
-        public string? TitleOfCourtesy { get; set; }
+        [Column(TypeName = "Date")]
         public DateTime? BirthDate { get; set; }
+        [Column(TypeName = "Date")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public DateTime? HireDate { get; set; }
         [MaxLength(255)]
         public string? Address { get; set; }
-        [MaxLength(100)]
-        public string? City { get; set; }
-        [MaxLength(100)]
+        [MaxLength(50)]
         public string? Region { get; set; }
-        [MaxLength(100)]
+        [MaxLength(50)]
         public string? PostalCode { get; set; }
-        [MaxLength(100)]
+        [MaxLength(20)]
         public string? Country { get; set; }
         [MaxLength(20)]
         public string? HomePhone { get; set; }
-        [MaxLength(20)]
-        public string? Extension { get; set; }
-        [Column(TypeName = "image")]
-        public byte[]? Photo { get; set; }
-        [MaxLength(500)]
+        [MaxLength(255)]
         public string? Notes { get; set; }
-        [MaxLength(255)]
-        public int? ReportsTo { get; set; }
-        [MaxLength(255)]
-        public string? PhotoPath { get; set; }
     }
 }
