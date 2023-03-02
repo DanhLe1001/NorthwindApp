@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Northwind.Data;
 
@@ -11,9 +12,11 @@ using Northwind.Data;
 namespace NorthwindApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230228170337_InitalDB")]
+    partial class InitalDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +36,17 @@ namespace NorthwindApp.Data.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Country")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Extension")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
@@ -45,8 +56,7 @@ namespace NorthwindApp.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("HireDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("HomePhone")
                         .HasMaxLength(20)
@@ -58,18 +68,33 @@ namespace NorthwindApp.Data.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Notes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<byte[]>("Photo")
+                        .HasColumnType("image");
+
+                    b.Property<string>("PhotoPath")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("PostalCode")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Region")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int?>("ReportsTo")
+                        .HasMaxLength(255)
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("TitleOfCourtesy")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
